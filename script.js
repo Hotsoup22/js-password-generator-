@@ -12,26 +12,36 @@ var specialLeters = [" ", "." , "," , ]
 //list of number 
 var numbers = ["1", "2", "3"];
 
-
+var passwordLength;
 
 
 function generatePassword() { 
     // declared an empty starting 'password' string
     var password = "";
-    passwordLength();
+    whatPasswordLength();
     //validated the 'passwordLength' variable value to verify that between  8 and 128
  
     //then display a message to the userthat "please provide a valid password length between 8 and 128".
 
 
-function passwordLength(){
+function whatPasswordLength(){
   passwordLength = prompt(" How many characters? choose between 8-128.");
-  if (passwordLength = 8) {
+  if (passwordLength <8) {
+    alert ("ERROR: Enter between 8-128!");
+    whatPasswordLength();
+  }
+  if (passwordLength >128){
+    alert("ERROR: Enter between 8-128!");
+    whatPasswordLength();
+  }
+  else{
     return passwordLength;
   }
 }
-console.log (passwordLength);
+console.log(passwordLength);
     // var passwordlengthCheck
+
+
 
     // //ask the user if they want upper case' letter and store it in a variable 
     // var wantsUpperCaseLetters = false;
@@ -42,13 +52,13 @@ console.log (passwordLength);
     // //ask the user if they want numbers and store it in a variable 
     // var wantsNumbers = false;
    
-    if( !wantsLowercase && !wantsUpperCaseLetters && !wantsSpecialLeters && !wantsNumbers) {
+    // if( !wantsLowercase && !wantsUpperCaseLetters && !wantsSpecialLeters && !wantsNumbers) {
       
 
         //then display a message to the user that "please select at least one character".
         //and then 'return "";'
         
-    }
+    // }
    
       //DECLARE an empty 'characters' list
       // var empty[""];
@@ -62,10 +72,10 @@ console.log (passwordLength);
 
       //iterate randomly selecting a  charcter from 'characters and appending  it to 'password'
 
-    return password;
-  }
+   
 
-
+      return password;
+    }
 
 
 
