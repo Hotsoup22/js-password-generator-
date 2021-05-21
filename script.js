@@ -12,29 +12,65 @@ var specialLeters = [" ", "." , "," , ]
 //list of number 
 var numbers = ["1", "2", "3"];
 
-//promt
 
 
-  function generatePassword() { 
-    var password = "asdasd";
-    console.log(password);
 
-    // asked the user how long the passworkd will be and store their answer in a
-    //variable called "passwordLength"
-    var passwordLength = 8;
-    console.log(passwordLength);
+function generatePassword() { 
+    // declared an empty starting 'password' string
+    var password = "";
+    passwordLength();
     //validated the 'passwordLength' variable value to verify that between  8 and 128
-  
-    // ask the user to make a choice on if they want to include each type of character.
-    var wantsLower = false;
-    var wantsLower = false;
-    var wantsLower = false;
-    var wantsLower = false;
+ 
+    //then display a message to the userthat "please provide a valid password length between 8 and 128".
 
 
+function passwordLength(){
+  passwordLength = prompt(" How many characters? choose between 8-128.");
+  if (passwordLength = 8) {
+    return passwordLength;
+  }
+}
+console.log (passwordLength);
+    // var passwordlengthCheck
+
+    // //ask the user if they want upper case' letter and store it in a variable 
+    // var wantsUpperCaseLetters = false;
+    // //ask the user if they want lower case' letter and store it in a variable 
+    // var wantsLowerCaseLetter = false;
+    // //ask the user if they want special case' letter and store it in a variable 
+    // var wantsSpecialLeters= false;
+    // //ask the user if they want numbers and store it in a variable 
+    // var wantsNumbers = false;
+   
+    if( !wantsLowercase && !wantsUpperCaseLetters && !wantsSpecialLeters && !wantsNumbers) {
+      
+
+        //then display a message to the user that "please select at least one character".
+        //and then 'return "";'
+        
+    }
+   
+      //DECLARE an empty 'characters' list
+      // var empty[""];
   
+    // if the user wants wantsUpperCaseLetters
+    //THEN combine 'lowercaseLetters' with characters" list
+    //AND THEN select on random letter from ' lowercaseLeetters' and append to 'password'
+
+
+      //repeat per character choice
+
+      //iterate randomly selecting a  charcter from 'characters and appending  it to 'password'
+
     return password;
   }
+
+
+
+
+
+
+
   // Write password to the #password input
   function writePassword() {
     var password = generatePassword();
@@ -43,7 +79,7 @@ var numbers = ["1", "2", "3"];
     passwordText.value = password;
   }
 
-  // *WHEN I click the button to generate a password
+  
 
   // Add event listener to generate button
   generateBtn.addEventListener("click", writePassword);
@@ -68,4 +104,7 @@ var numbers = ["1", "2", "3"];
 //THEN the password is either displayed in an alert or written to the page
 
 
+//pars int google it?
+//raondomly select out of a array? 
+//math.random google it
 //
