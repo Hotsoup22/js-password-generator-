@@ -6,7 +6,7 @@ var generateBtn = document.querySelector("#generate");
 //list of lowercase letters
 var lowercaseLetter = ["a", "b", "c"];
 //list of uppercase letters
-var uppercaseLetters = ["A", "B", "C"];
+var upperCaseLetters = ["A", "B", "C"];
 //list of special letters
 var specialLeters = [" ", "." , "," , ]
 //list of number 
@@ -19,11 +19,12 @@ function generatePassword() {
     // declared an empty starting 'password' string
     var password = "";
     whatPasswordLength();
+    wantUpperCase();
     //validated the 'passwordLength' variable value to verify that between  8 and 128
  
     //then display a message to the userthat "please provide a valid password length between 8 and 128".
 
-
+ // var passwordlength +Check
 function whatPasswordLength(){
   passwordLength = prompt(" How many characters? choose between 8-128.");
   if (passwordLength <8) {
@@ -38,11 +39,20 @@ function whatPasswordLength(){
     return passwordLength;
   }
 }
-console.log(passwordLength);
-    // var passwordlengthCheck
+console.log(passwordLength + " This is passwordLength");
 
 
+function wantUpperCase(){
+  upperCaseLettersValid = confirm ("do you want Capitol LETTERS? Click OKAY, to continue.. OR CANCEL to cancel password generation.");
+  if (upperCaseLettersValid === "ok") { 
+  } else if(upperCaseLettersValid === "Cancel"){
+  
 
+  } 
+    return upperCaseLettersValid;
+  
+}
+console.log(upperCaseLettersValid + " This is the Upper Case letter check")
     // //ask the user if they want upper case' letter and store it in a variable 
     // var wantsUpperCaseLetters = false;
     // //ask the user if they want lower case' letter and store it in a variable 
