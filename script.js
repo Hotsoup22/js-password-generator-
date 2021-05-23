@@ -4,11 +4,11 @@ var generateBtn = document.querySelector("#generate");
 
 //DECLARE GOLBAL DATA
 //list of lowercase letters
-var lowercaseLetters = ["a", "b", "c"];
+var lowerCaseLetters = ["a", "b", "c"];
 //list of uppercase letters
 var upperCaseLetters = ["A", "B", "C"];
 //list of special letters
-var specialLeters = [" ", ".", ","];
+var specialLetters = ["/.,()"];
 //list of number
 var numbers = ["1", "2", "3"];
 
@@ -36,7 +36,7 @@ function whatPasswordLength() {
 }
 
 
-
+//ask the user if they want upper case letters and returns a boolean.
 function wantUpperCase() {
   upperCaseLettersValid = prompt("do you want Capitol LETTERS? Yes or NO");
   if (upperCaseLettersValid === "yes" || upperCaseLettersValid === "y") {
@@ -49,62 +49,50 @@ function wantUpperCase() {
   return upperCaseLettersValid;
 }
 
-
-function wantLowerCase() {
-  lowerCaseLettersValid = prompt("do you want lower case letters? Yes or NO");
-  if (lowerCaseLettersValid === "yes" || lowerCaseLettersValid === "y") {
-    lowerCaseLettersValid = true;
-    return lowerCaseLettersValid;
-  } else if (lowerCaseLettersValid === "no") {
-    lowerCaseLettersValid = false;
+//ask the user if they want special letters and returns a boolean.
+function wantSpecialLetters() {
+  specialLettersValid = prompt("do you want special letters? Yes or NO");
+  if (specialLettersValid === "yes" || specialLettersValid === "y") {
+    specialLettersValid = true;
+    return specialLettersValid;
+  } else if (specialLettersValid === "no" || specialLettersValid === "n") {
+    specialLettersValid = false;
     
   }
-  return lowerCaseLettersValid;
+  return specialLettersValid;
 }
 
 
 
 
-// function wantsLowerCaseLetter(){
-//   lowercaseLetterValid = confirm
-// }
-// //ask the user if they want upper case' letter and store it in a variable
-// var wantsUpperCaseLetters = false;
-// //ask the user if they want lower case' letter and store it in a variable
-// var wantsLowerCaseLetter = false;
-// //ask the user if they want special case' letter and store it in a variable
-// var wantsSpecialLeters= false;
-// //ask the user if they want numbers and store it in a variable
-// var wantsNumbers = false;
-
-// if( !wantsLowercase && !wantsUpperCaseLetters && !wantsSpecialLeters && !wantsNumbers) {
-
-//then display a message to the user that "please select at least one character".
-//and then 'return "";'
-
-// }
-
-//DECLARE an empty 'characters' list
-// var empty[""];
-
-// if the user wants wantsUpperCaseLetters
-//THEN combine 'lowercaseLetters' with characters" list
-//AND THEN select on random letter from ' lowercaseLeetters' and append to 'password'
-
-//repeat per character choice
-
-//       //iterate randomly selecting a  charcter from 'characters and appending  it to 'password'
-// if(upperCaseLettersValid )
+//generates password using multiple funcnctions. a for loop is used to pull from my arrays and randomly ++1.
 
 function generatePassword() {
-  var password = "";
+  
   whatPasswordLength();
   console.log(passwordLength + " This is passwordLength");
   wantUpperCase();
   console.log(upperCaseLettersValid + " This is the Upper Case letter check");
-  wantLowerCase();
-  console.log(lowerCaseLettersValid + " This is the lower Case letter check");
+  wantSpecialLetters();
+  console.log(specialLettersValid + " This is the special letter check");
 
+  var characters = lowerCaseLetters;
+  var password = "";
+
+  if (upperCaseLettersValid && specialLettersValid) {
+    characters  += upperCaseLetters += specialLetters;
+    
+  } else if (specialLettersValid){
+    characters += specialLetters;
+  } else if (upperCaseLettersValid) {
+    characters += upperCaseLetters;
+  } else {
+    characters === lowerCaseLetters
+  }
+  //a for loop is used to pull from my characters var and randomly ++1.
+  for (var i =0; i < passwordLength; i++){
+    password += characters.charAt(Math.floor(Math.random() *characters.length));
+  }
   return password;
 }
 
@@ -119,25 +107,3 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-//GIVEN I need a new, secure password
-
-//THEN I am presented with a series of prompts for password criteria
-// - promts with boxes to check
-//WHEN prompted for password criteria
-//-the boxes to check
-//THEN I select which criteria to include in the password
-//WHEN prompted for the length of the password
-//THEN I choose a length of at least 8 characters and no more than 128 characters
-//WHEN prompted for character types to include in the password
-//THEN I choose lowercase, uppercase, numeric, and/or special characters
-//WHEN I answer each prompt
-//THEN my input should be validated and at least one character type should be selected
-//WHEN all prompts are answered
-//THEN a password is generated that matches the selected criteria
-//WHEN the password is generated
-//THEN the password is either displayed in an alert or written to the page
-
-//pars int google it?
-//raondomly select out of a array?
-//math.random google it
-//
