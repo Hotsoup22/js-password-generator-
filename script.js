@@ -4,106 +4,120 @@ var generateBtn = document.querySelector("#generate");
 
 //DECLARE GOLBAL DATA
 //list of lowercase letters
-var lowercaseLetter = ["a", "b", "c"];
+var lowercaseLetters = ["a", "b", "c"];
 //list of uppercase letters
 var upperCaseLetters = ["A", "B", "C"];
 //list of special letters
-var specialLeters = [" ", "." , "," , ]
-//list of number 
+var specialLeters = [" ", ".", ","];
+//list of number
 var numbers = ["1", "2", "3"];
 
 var passwordLength;
 
+var upperCaseLettersValid;
 
-function generatePassword() { 
-    // declared an empty starting 'password' string
-    var password = "";
-    whatPasswordLength();
-    wantUpperCase();
-    //validated the 'passwordLength' variable value to verify that between  8 and 128
- 
-    //then display a message to the userthat "please provide a valid password length between 8 and 128".
+//validated the 'passwordLength' variable value to verify that between  8 and 128
 
- // var passwordlength +Check
-function whatPasswordLength(){
+//then display a message to the userthat "please provide a valid password length between 8 and 128".
+
+// var passwordlength +Check
+function whatPasswordLength() {
   passwordLength = prompt(" How many characters? choose between 8-128.");
-  if (passwordLength <8) {
-    alert ("ERROR: Enter between 8-128!");
+
+  if (passwordLength < 8) {
+    alert("ERROR: Enter between 8-128!");
     whatPasswordLength();
-  }
-  if (passwordLength >128){
+
+  }else if (passwordLength > 128) {
     alert("ERROR: Enter between 8-128!");
     whatPasswordLength();
   }
-  else{
-    return passwordLength;
-  }
+  return passwordLength;
 }
-console.log(passwordLength + " This is passwordLength");
 
 
-function wantUpperCase(){
-  upperCaseLettersValid = confirm ("do you want Capitol LETTERS? Click OKAY, to continue.. OR CANCEL to cancel password generation.");
-  if (upperCaseLettersValid === "ok") { 
-  } else if(upperCaseLettersValid === "Cancel"){
-  
 
-  } 
+function wantUpperCase() {
+  upperCaseLettersValid = prompt("do you want Capitol LETTERS? Yes or NO");
+  if (upperCaseLettersValid === "yes" || upperCaseLettersValid === "y") {
+    upperCaseLettersValid = true;
     return upperCaseLettersValid;
-  
-}
-console.log(upperCaseLettersValid + " This is the Upper Case letter check")
-    // //ask the user if they want upper case' letter and store it in a variable 
-    // var wantsUpperCaseLetters = false;
-    // //ask the user if they want lower case' letter and store it in a variable 
-    // var wantsLowerCaseLetter = false;
-    // //ask the user if they want special case' letter and store it in a variable 
-    // var wantsSpecialLeters= false;
-    // //ask the user if they want numbers and store it in a variable 
-    // var wantsNumbers = false;
-   
-    // if( !wantsLowercase && !wantsUpperCaseLetters && !wantsSpecialLeters && !wantsNumbers) {
-      
-
-        //then display a message to the user that "please select at least one character".
-        //and then 'return "";'
-        
-    // }
-   
-      //DECLARE an empty 'characters' list
-      // var empty[""];
-  
-    // if the user wants wantsUpperCaseLetters
-    //THEN combine 'lowercaseLetters' with characters" list
-    //AND THEN select on random letter from ' lowercaseLeetters' and append to 'password'
-
-
-      //repeat per character choice
-
-      //iterate randomly selecting a  charcter from 'characters and appending  it to 'password'
-
-   
-
-      return password;
-    }
-
-
-
-
-
-  // Write password to the #password input
-  function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-
-    passwordText.value = password;
+  } else if (upperCaseLettersValid === "no") {
+    upperCaseLettersValid = false;
+    
   }
+  return upperCaseLettersValid;
+}
 
-  
 
-  // Add event listener to generate button
-  generateBtn.addEventListener("click", writePassword);
+function wantLowerCase() {
+  lowerCaseLettersValid = prompt("do you want lower case letters? Yes or NO");
+  if (lowerCaseLettersValid === "yes" || lowerCaseLettersValid === "y") {
+    lowerCaseLettersValid = true;
+    return lowerCaseLettersValid;
+  } else if (lowerCaseLettersValid === "no") {
+    lowerCaseLettersValid = false;
+    
+  }
+  return lowerCaseLettersValid;
+}
 
+
+
+
+// function wantsLowerCaseLetter(){
+//   lowercaseLetterValid = confirm
+// }
+// //ask the user if they want upper case' letter and store it in a variable
+// var wantsUpperCaseLetters = false;
+// //ask the user if they want lower case' letter and store it in a variable
+// var wantsLowerCaseLetter = false;
+// //ask the user if they want special case' letter and store it in a variable
+// var wantsSpecialLeters= false;
+// //ask the user if they want numbers and store it in a variable
+// var wantsNumbers = false;
+
+// if( !wantsLowercase && !wantsUpperCaseLetters && !wantsSpecialLeters && !wantsNumbers) {
+
+//then display a message to the user that "please select at least one character".
+//and then 'return "";'
+
+// }
+
+//DECLARE an empty 'characters' list
+// var empty[""];
+
+// if the user wants wantsUpperCaseLetters
+//THEN combine 'lowercaseLetters' with characters" list
+//AND THEN select on random letter from ' lowercaseLeetters' and append to 'password'
+
+//repeat per character choice
+
+//       //iterate randomly selecting a  charcter from 'characters and appending  it to 'password'
+// if(upperCaseLettersValid )
+
+function generatePassword() {
+  var password = "";
+  whatPasswordLength();
+  console.log(passwordLength + " This is passwordLength");
+  wantUpperCase();
+  console.log(upperCaseLettersValid + " This is the Upper Case letter check");
+  wantLowerCase();
+  console.log(lowerCaseLettersValid + " This is the lower Case letter check");
+
+  return password;
+}
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
 //GIVEN I need a new, secure password
 
@@ -123,8 +137,7 @@ console.log(upperCaseLettersValid + " This is the Upper Case letter check")
 //WHEN the password is generated
 //THEN the password is either displayed in an alert or written to the page
 
-
 //pars int google it?
-//raondomly select out of a array? 
+//raondomly select out of a array?
 //math.random google it
 //
