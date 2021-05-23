@@ -1,34 +1,47 @@
 # <JAVASCRIPT PASSWORD GENERATOR>
+
 ## Description
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-## Table of Contents (Optional)
-If your README is long, add a table of contents to make it easy for users to find what they need.
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+
+ My task was to modify starter code to create an application that enables employees to generate random passwords based on criteria that they’ve selected. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished, responsive user interface that adapts to multiple screen sizes.
+ 
+
+### Why did you build this project?
+To practice javascript, i had/have little exp coding. i found this exercise to help understand how functions work together. how to set boolean's, varaibles, if , if else, and for-loops. 
+
+### What problem does it solve?
+how to set global and local var. 
+set-up functions that run only when called. 
+that also validates user inputs.
+use for-loop to add charaters randomly using (Math.random) from my global array's set to password length from user input. 
+
+
 ## Installation
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+no installation necessary. just vist the following web-page! https://hotsoup42.github.io/js-password-generator-/
+
 ## Usage
-Provide instructions and examples for use. Include screenshots as needed.
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+- Click the Generate Button to start.
+
+ ![alt text](Assets\js-password-gen-home.png)
+
+- follow the prompts on screen, answer with yes, y, no, n.
+
+   
+    ![alt text](Assets\js-password-prompt.png)
+    ![alt text](Assets\js-pass-prompt2.png)
+
+- you did it! you should see your new password in the text box.
+
+    ![alt text](Assets\js-pass-yay.png)
+
 ## Credits
 List your collaborators, if any, with links to their GitHub profiles.
 If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
 If you followed tutorials, include links to those here as well.
-## License
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
+
 ---
 
 ## Features
-If your project has a lot of features, list them here.
+- creates a password with random values, based on what the user inputs.
+
 ## How to Contribute
 contact me : jose22gw@gmail.com
-## Tests
